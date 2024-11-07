@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Seconds"></p>
+    <button id="stop">STOP</button>
+    <script>
+
+//1.task is to create an remainder of water for every 2 hours by using set timeout
+
+
+function remainder(){
+    console.log("Time to drink water! Stay hydrated.")
+}
+
+let remaind=setInterval(remainder,120*60*100)
+
+setTimeout(()=>{
+    clearInterval(remaind)
+    console.log("Remainder Stopped")
+},720010)
+
+
+//2. create a stopwatch based on set interval
+
+
+
+count=0
+function Stopwatch(){
+        count++
+        console.log(count)
+        let ele=document.getElementById("Seconds")
+        ele.innerText=count
+        ele.style.fontSize="100px"
+}
+let watch=setInterval(Stopwatch,1000)
+
+setTimeout(()=>{
+    let btn=document.getElementById("stop")
+    btn.style.color="black"
+    btn.style.height="50px"
+    btn.style.width="100px"
+    btn.style.fontSize="20px"
+    btn.addEventListener("click",()=>{
+       clearInterval(watch)
+    })
+})
+
+        
+    </script>
+</body>
+</html>
